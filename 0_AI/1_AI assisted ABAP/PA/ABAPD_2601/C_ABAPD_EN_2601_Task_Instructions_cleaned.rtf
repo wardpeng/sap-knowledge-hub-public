@@ -1,0 +1,196 @@
+{\rtf1\ansi\deff0
+{\fonttbl{\f0 Calibri;}{\f1 Arial;}}
+\viewkind4\uc1\pard\sa200\sl276\slmult1\lang1033\f0\fs22\b C_ABAPD\par
+SAP Certified Associate - Back-End Developer - ABAP Cloud\par
+SAP Certification Tasks\par
+Course Version: 2601\b0\par
+\par
+\b Typographic Conventions\b0\par
+American English is the standard used in this handbook.\par
+The following typographic conventions are also used:\par
+- Demonstration\par
+- Procedure\par
+- Warning or Caution\par
+- Hint\par
+- Related or Additional Information\par
+- Facilitated Discussion\par
+- User interface control: Example text\par
+- Window title: Example text\par
+\par
+\b Contents\b0\par
+Unit 1: System-based Assessment\par
+Task 1: Introduction\par
+Task 2: Context\par
+Task 3: Create A Package\par
+Task 4: Create a Class Hierarchy\par
+Task 5: Read a List of Flight Connections\par
+Task 6: Create A RAP Business Object\par
+Task 7: Create a CDS Access Control\par
+Task 8: Add Exception Handling to a Method\par
+Task 9: Create ABAP Dictionary Types\par
+\par
+\b Unit 1 - Task 1: Introduction\b0\par
+In this assessment, you will work on one or more exercises that you must complete in the assigned system. Please make sure to read the instructions below carefully before accessing the system.\par
+\par
+Before starting:\par
+- Ensure your browser is up to date and clear your browser cache and cookies.\par
+- Make sure to close all browser sessions before you start the assessment and remember not to open unnecessary tabs or windows while working on the exercises.\par
+\par
+During the assessment:\par
+- Ensure you follow the assessment instructions precisely. Any deviation may result in failure of the exercise.\par
+- Avoid access to any other practical systems during the assessment in any other browser session (including incognito).\par
+- If you accidentally close the assessment browser, go back to learning.sap.com, log in again, and go back to the assessment.\par
+- Should you encounter technical difficulties with the assessment, please refer to the FAQs or create a case with the support team.\par
+\par
+Ending the assessment:\par
+- Select the Confirm completion button to submit your assessment. This button is in the browser tab where you initially accessed the assessment, and not in the system tab.\par
+- Once you submit the assessment, you can no longer make changes. Do not attempt to access the system again once you have submitted your assessment.\par
+- To get the result of your assessment, please wait for the validation process to complete (approximately 15 minutes). Your result (failed/passed) will be displayed under My Certifications. Click on your profile icon in the top-right corner of learning.sap.com and select My Certifications.\par
+\par
+Good luck with your assessment!\par
+\par
+\b Unit 1 - Task 2: Context\b0\par
+\b About the Exam\b0\par
+In this exam you must complete practical ABAP development tasks. Please note the following points, as failure to do so may have a negative effect on your final result:\par
+- Name all repository objects as specified in the exercise descriptions.\par
+- If specific types for variables or method parameters are named in the exercise descriptions, you must use them.\par
+- You must activate all repository objects that you create in order for your objects to be evaluated. Note that this does not apply to packages or message classes, which cannot be activated.\par
+\par
+You may use any everyday aids such as learning.sap.com, help.sap.com and the ABAP Keyword Documentation (F1 Help) to help you complete the tasks. It is also expected that you will use Joule in ADT to assist you.\par
+\par
+\b Logging On to the System\b0\par
+You will complete this exam using your own installation of Eclipse and ABAP Development Tools for Eclipse. Before starting the exam, ensure that your Eclipse installation has release 2025-12 or higher and that your ADT installation has release 3.56.0 or higher.\par
+\par
+When you are ready to start the exam, click on Access Practice System. A browser window will open. You need this window to find out your group number for the exercises and the service URL for the ABAP project in ADT.\par
+\par
+To find out your group number, click on the circle containing the letters EL. Your group number, which you need in order to name your objects correctly during the exam, is the four-digit number following the letter E - so in this case, 0007. You replace the four pound signs (####) from the task instructions with this number whenever it is used.\par
+\par
+In the address bar of the browser window is a URL. The highlighted part of this - up to the end of hana.ondemand.com - is the service URL that you will need to create your ABAP Cloud Project for the exam. Mark this URL and copy it to your clipboard. Note that it will not necessarily be identical to the URL shown, as different systems are used for the exam at different times.\par
+\par
+Open Eclipse and create a new ABAP Cloud project using the URL that you copied from the browser window. When Eclipse prompts you to logon, use the Copy URL to Clipboard option and paste the logon URL into an incognito (InPrivate) browser window. This will prevent conflicts with any other logon data that you might have stored in a browser. The exam enrollment process ensures that you are logged on by single sign-on. You will not be prompted for a user and password.\par
+\par
+Note:\par
+- During the exam, you will need to copy certain objects. To facilitate this, add the package ZC_ABAPD_EXAM to your list of favorite packages.\par
+- You have three hours to complete the exam.\par
+\par
+\b Unit 1 - Task 3: Create A Package\b0\par
+In order to complete the subsequent exercises, you must create a package in the system.\par
+\par
+In your examination system, create a package called ZABAP_#### where #### is your seat number. Assign it to superpackage ZSTUDENTS, and create a transport request. Use this transport request in all subsequent exercises.\par
+\par
+Make sensible entries in all mandatory fields.\par
+\par
+\b Unit 1 - Task 4: Create a Class Hierarchy\b0\par
+In your package ZABAP_####, create global classes according to the following specification.\par
+\par
+You can use the definitions and contents of the database tables /DMO/FLIGHT, /DMO/CONNECTION, and /LRN/AIRPORT to familiarize yourself with the data.\par
+\par
+There shall be a general class flight from which a specialized class passenger_flight is derived.\par
+\par
+Create a global class ZCL_####_FLIGHT in your package ZABAP_####. It should have the following attributes:\par
+- carrier_id, type /DMO/CARRIER_ID, readable by consumers but not changeable by them\par
+- connection_id, type /DMO/CONNECTION_ID, readable by consumers but not changeable by them\par
+- airport_from, type /DMO/AIRPORT_FROM_ID, readable by consumers but not changeable by them\par
+- airport_to, type /DMO/AIRPORT_TO_ID, readable by consumers but not changeable by them\par
+- plane_type, type /DMO/PLANE_TYPE_ID, not accessible to consumers, but directly accessible to subclasses\par
+\par
+Create the following method:\par
+- Name: Constructor\par
+- Signature: importing parameters for carrier_id, connection_id, and plane_type\par
+- Exception: ZCX_C_ABAPD_NO_CONNECTION\par
+\par
+Implementation of class ZCL_####_FLIGHT:\par
+1. Set the values of carrier_id, connection_id, and plane_type.\par
+2. Read the corresponding entry from database table /DMO/CONNECTION to fill the attributes airport_from and airport_to. If the entry does not exist, raise the exception ZCX_C_ABAPD_NO_CONNECTION.\par
+\par
+Create another global class ZCL_####_PASSENGER_FLIGHT that is derived from ZCL_####_FLIGHT and has the following additional attribute:\par
+- seats_max, type /DMO/PLANE_SEATS_MAX, accessible only by the class itself\par
+\par
+Create the following method:\par
+- Name: Constructor\par
+- Signature: importing parameters for carrier_id, connection_id, and plane_type\par
+- Exception: ZCX_C_ABAPD_NO_CONNECTION\par
+\par
+Implementation:\par
+1. Call the superclass constructor.\par
+2. Use CDS view ZI_CABAPD_PASSENGER to read the field MaximumSeats for the plane type passed to the method and assign it to the seats_max attribute. If the entry does not exist, raise the exception ZCX_C_ABAPD_NO_CONNECTION.\par
+\par
+Hint: If you want to test your code, you can use plane types A320-200, 737-800, or 747-400.\par
+\par
+\b Unit 1 - Task 5: Read a List of Flight Connections\b0\par
+Your task is to create a method that returns a list of flight connections departing from a particular airport. The list should contain all direct flights from that airport, as well as all destinations that can be reached with a single change using the same airline. Return flights do not count.\par
+\par
+Example input data:\par
+- LH / 400 / FRA / JFK\par
+- LH / 2010 / EDI / FRA\par
+- SQ / 299 / EDI / SIN\par
+- SQ / 300 / SIN / EDI\par
+- SQ / 30 / SIN / SYD\par
+- BA / 447 / EDI / LHR\par
+- AA / 12 / LHR / BOS\par
+\par
+For departure airport EDI, the result would be:\par
+- LH / EDI / JFK / FRA\par
+- LH / EDI / FRA / -\par
+- SQ / EDI / SIN / -\par
+- SQ / EDI / SYD / SIN\par
+- BA / EDI / LHR / -\par
+\par
+Note that the connection EDI to EDI via SIN does not count, as it is a simple return flight, not an onward connection.\par
+\par
+Requirements:\par
+1. In your package ZABAP_####, create a class ZCL_####_CONNECTIONS.\par
+2. Create a public instance method get_connections. It should have an importing parameter for a departure airport called i_departure with type /DMO/AIRPORT_FROM_ID. It should have a returning parameter for a list of connections called r_connections with type zcert_connections.\par
+3. Solve the task using one or more SELECT statements that read from database table /DMO/CONNECTION. Note that there is more than one valid solution.\par
+4. Your target table r_connections should contain the values of the database fields carrier_id, airport_from_id, and airport_to_id. There is an additional field airport_via_id. If the connection is direct, place a dash '-' in the field. If the connection involves a change of flight, fill the field with the code of the airport where the passenger will have to change.\par
+\par
+\b Unit 1 - Task 6: Create A RAP Business Object\b0\par
+You are going to copy a database table and use your copy as the basis for a generated RAP Business Object. You will add a simple field control and determination to the object.\par
+\par
+The table contains travel information. Each row corresponds to a trip with various information such as a trip number, start and end date, and a status. In this exercise, you will work with the Status field to ensure that it cannot be modified by a user on the UI. Instead, you will implement a determination to automatically set the status of a newly-created trip to N.\par
+\par
+Requirements:\par
+1. Copy the database table ZABAPDTRAVEL. Call your copy ZZ####TRAVEL and assign it to your package ZABAP_####. Note that the double Z at the beginning of the name is important. Activate the table.\par
+2. Use the Generate ABAP Repository Objects function from the context menu of your new table to create an OData UI Service. Do not change any naming proposals in the wizard.\par
+3. In the behavior definition ZR_Z####TRAVEL, set the field Status to read-only.\par
+4. Declare a determination setInitialStatus for event Save. It should only be executed when an instance is newly created.\par
+5. Implement the determination so that the status of each new trip is set to N when the user saves the data.\par
+\par
+Result:\par
+You can test the behavior of your UI service by publishing the service binding ZUI_Z####TRAVEL_O4, and choosing Preview.\par
+\par
+\b Unit 1 - Task 7: Create a CDS Access Control\b0\par
+You are going to copy a CDS view, and you need to provide it with an access control.\par
+\par
+Requirements:\par
+1. Copy the CDS View Entity ZC_ABAPD_AGENCY. Call your copy Z####_AGENCY and assign it to your package ZABAP_####. Activate the view entity.\par
+2. Create a CDS Access Control to provide an authorization check for the CDS View Entity. Call the access control Z####_AGENCY. In it, use the authorization object /LRN/AGCY to restrict access to the data according to the contents of the view column agency_id. Use the activity code corresponding to the operation display.\par
+\par
+\b Unit 1 - Task 8: Add Exception Handling to a Method\b0\par
+You are going to copy a class that contains a method without any exception handling. Your task is to implement this.\par
+\par
+Requirements:\par
+1. Copy the class ZCL_AGENCY_MODEL. Call the copy ZCL_####_AGENCY_MODEL and assign it to your package ZABAP_####.\par
+2. Create a global exception class ZCX_####_NO_AGENCY. In the class, create a constant representing message 002 from message class ZC_ABAPD. This message has a placeholder &1 for the travel agency. Ensure that the agency number is passed to the exception object.\par
+3. In the method zcl_####_agency_model->get_agency(), declare and raise the exception if the select statement does not return any data.\par
+\par
+\b Unit 1 - Task 9: Create ABAP Dictionary Types\b0\par
+In this task you will create a structure type and an internal table type in the ABAP Dictionary.\par
+\par
+You require an internal table type to manage data from table /DMO/CUSTOMER. The key value is CUSTOMER_ID, and it is guaranteed to be unique. In the application, you will fill the table once and make repeated read accesses to the table using the key.\par
+\par
+Requirements:\par
+1. In your package ZABAP_####, create a structure called Z####_CUSTOMER with the following components:\par
+- CUSTOMER_ID\par
+- FIRST_NAME\par
+- LAST_NAME\par
+- STREET\par
+- POSTAL_CODE\par
+- CITY\par
+- COUNTRY_CODE\par
+\par
+For the types of the components, use the same data elements as the corresponding fields in table /DMO/CUSTOMER.\par
+Set the enhancement category of the structure to #EXTENSIBLE_CHARACTER_NUMERIC.\par
+\par
+2. In your package ZABAP_####, create an internal table type called Z####_T_CUST. Use the structure that you create as its line type and make it a hashed table. Choose the correct key components based on the information above.\par
+}
