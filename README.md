@@ -8,5 +8,5 @@
 
 ## 说明
 
-- 公开范围以私有仓库中的 `C:\Users\wapeng\git\sap-knowledge-hub\public.md` 为准。
+- 公开范围以私有仓库中的 `sap-knowledge-hub/public.md` 为准。
 - 私有仓库与公开仓库保持相同目录结构，仅同步白名单路径。
