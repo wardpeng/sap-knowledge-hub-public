@@ -1,8 +1,7 @@
 ---
-layout: home
-title: 首页
+layout: null
+title: Redirect
 ---
 
-欢迎来到 `sap-knowledge-hub-public` 博客。
-
-当前公开内容仍以仓库中的白名单规则为准。
+<meta http-equiv="refresh" content="0; url=/sap-knowledge-hub-public/" />
+<link rel="canonical" href="/sap-knowledge-hub-public/" />
