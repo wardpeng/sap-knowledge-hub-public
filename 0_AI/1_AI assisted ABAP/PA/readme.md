@@ -11,6 +11,106 @@ SAP 的 PA（Practical Assessment，实操评估）目前可分为两类：
 
 - [Scenario-based assessment FAQs](https://learning.sap.com/helpcenter/certification-support/scenario-based-assessment-faqs)
 - [System-based assessment FAQs](https://learning.sap.com/helpcenter/certification-support/system-based-assessments-faq)
+- [SAP Certification practical exams - experience and preparation FAQs](https://learning.sap.com/helpcenter/certification-support/practical-exam-preparation)
+
+---
+
+## 0. 通用考试介绍
+
+SAP 的 Practical Exam（实操考试）整体上更接近真实项目环境，而不是传统闭卷考试。根据 SAP 官方整页 FAQ，这类考试通常采用**开卷、非监考**的方式，重点是评估考生是否能够在接近真实项目的条件下完成任务。
+
+### 0.1 如何准备
+
+SAP 官方建议考生继续通过以下资源备考：
+
+- `SAP Learning site`
+- `SAP Learning Hub`
+- `SAP Community`
+- `SAP Learning help center`
+
+此外，官方说明并**不强制要求**考生在参加 practical exam 前完成全部 learning journey 课程和实操练习，但**强烈建议**尽量完成。
+
+### 0.2 考试时长
+
+每个 practical exam 通常包含若干任务，设计目标是在固定时间内完成。官方给出的常见时长是：
+
+- **每个 assessment 通常约 2 到 3 小时**
+
+实际总时长会根据认证角色和场景复杂度有所不同。
+
+### 0.3 是否监考
+
+SAP 官方明确说明，practical exam 是**非监考（non-proctored）**的。  
+SAP 采用的是基于 **SAP Universal ID** 的技术校验，而不是传统的实时人工监考。
+
+官方给出的理由是：这更符合真实工作环境，即专业人员在工作中会使用 SAP 工具和各类资料，而不是在被严格监控的闭卷环境中作答。
+
+### 0.4 考试中可使用的资源
+
+在 practical exam 过程中，考生可以访问公开可获得的 SAP 资源，包括：
+
+- `SAP Help Portal`
+- `SAP Learning site`
+- 在适用场景下可使用 `SAP Joule for Consultants`
+- 以及其他 AI 工具
+
+SAP 的原则是：考试环境尽量模拟真实项目条件，也就是允许专业人员在完成任务时查阅资料、协作并使用工具解决问题。
+
+### 0.5 评分方式
+
+不同 practical exam 类型的评分方式不同：
+
+- **System-based exams**
+  - 根据是否成功完成规定任务以及系统输出结果评分
+  - 评分可能由系统自动完成，也可能通过评估脚本完成
+- **Scenario-based exams**
+  - AI 模型会辅助评估回答的准确性、完整性和效率
+  - 如果是视频上传形式，则由 SAP 专家根据既定评分逻辑人工评分
+  - 官方说明上传的视频会保留 **3 个月**，之后永久删除
+
+### 0.6 技术问题处理
+
+如果考试过程中出现技术问题，且问题导致你无法完成任务，官方建议：
+
+- 在 SAP Certification support 页面创建 case
+- 提供详细问题描述
+- 提供触发问题的步骤
+- 尽可能附上截图
+
+如果 SAP 复核后确认是系统侧错误，官方说明**可能会授予新的考试机会**。
+
+### 0.7 能否自己选择考试类型
+
+不能。
+
+官方说明考生**不能自行选择**考试类型。具体认证要求的 assessment 类型，可能是：
+
+- `system-based`
+- `scenario-based`
+- 或两者组合
+
+因此，参加考试前应先在认证详情页确认该认证要求的是哪一种 practical assessment。
+
+### 0.8 无障碍与辅助支持
+
+由于 practical exam 是**开卷且非监考**的，因此如果使用以下辅助方式，通常**不需要额外提交特殊申请**：
+
+- 屏幕阅读器
+- 他人协助
+
+如果因为残障等原因需要进一步帮助，官方建议额外提交 support case。
+
+### 0.9 通用理解
+
+因此，从备考角度看，practical exam 不只是考“记住了多少”，更看重以下能力：
+
+- 是否知道去哪里快速找到正确资料
+- 是否能结合官方文档和工具完成任务
+- 是否能在限定时间内高效解决问题
+
+来源：
+
+- [SAP Certification practical exams - experience and preparation FAQs](https://learning.sap.com/helpcenter/certification-support/practical-exam-preparation)
 
 ---
 
